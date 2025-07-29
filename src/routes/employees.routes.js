@@ -14,4 +14,10 @@ router.get('/employees', async (req, res) => {
     }
 });
 
+router.get('/employees/:id', async (req, res) => {
+    const { id } = req.params;
+
+
+});
+
 export { router }
