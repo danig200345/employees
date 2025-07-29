@@ -1,26 +1,12 @@
 import { Router } from "express";
 
-import { postCheckin, getCheckins } from "../controllers/checkin.js";
+import { getCheck, postCheck } from "../controllers/checkin.controller.js";
 
 const router = Router();
 
-router.get('/checkins', async (req, res) => {
-    try {
-        const checkins = await getCheckins();
-        res.status(200).json(checkins);
-    } catch (error) {
-        res.status(500).json({ message: error });
-    }
-});
+router.get('/checkins', getCheck);
 
 
-router.post('/checkins', async (req, res) => {
-    try {
-        const checkins = await postCheckin(req.body);
-        res.status(200).json(checkins);
-    } catch (error) {
-        res.status(500).json({ message: error });
-    }
-});
+router.post('/checkins', postCheck);
 
 export { router };

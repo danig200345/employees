@@ -1,23 +1,10 @@
 import { Router } from "express";
-import { getEmployees } from "../controllers/employees.js";
+import { employee, employeeById } from "../controllers/employees.controller.js";
 
 const router = Router();
 
-router.get('/employees', async (req, res) => {
-    try {
-        const employees = await getEmployees();
-        res.status(200).json(employees);
+router.get('/employees', employee);
 
-    }
-    catch (error) {
-        res.status(500).json({ message: "Error fetching employees" });
-    }
-});
-
-router.get('/employees/:id', async (req, res) => {
-    const { id } = req.params;
-
-
-});
+router.get('/employees/:id', employeeById);
 
 export { router }
