@@ -6,10 +6,10 @@ dotenv.config();
 
 export const authToken = async (req, res, next) => {
     const tokens = req.cookies.access_token
-    req.session = { user: null }
+    req.session = { user: null };
     try {
         const data = jwt.verify(tokens, process.env.JWT_SECRET_KEY);
-        req.session.user = data
+        req.session.user = data;
 
     }
     catch (error) {

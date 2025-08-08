@@ -4,9 +4,6 @@ import { Employee } from "../models/employeeSequelize.js";
 
 export const getAllEmployees = async (req, res) => {
     try {
-        const session = req.session.user;
-        console.log('Session user:', session.user);
-        console.log('Session type:', session.type);
         const employees = await Employee.findAll();
         res.status(200).json(employees);
     } catch (error) {
