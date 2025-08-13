@@ -18,7 +18,7 @@ export const loginToken = async (req, res) => {
 
     } catch (error) {
         console.error('Error generating token:', error);
-        return res.status(500).json({ message: 'Error generating token' });
+        return res.status(500).json({ success: false, message: 'Error generating token' });
     }
 
 
