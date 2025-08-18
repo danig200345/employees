@@ -5,7 +5,7 @@ import { sequelize } from "./sequelize.js";
 
 
 export const Check = sequelize.define('Check', {
-    id_checks: {
+    id_check: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
